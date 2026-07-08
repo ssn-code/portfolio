@@ -1,0 +1,6 @@
+{
+  "name": "SSN Portfolio",
+  "description": "Premium modern portfolio website for SSN, a Computer Science Engineering student specialized in Full Stack Development, Machine Learning, Cybersecurity, and Blockchain.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
