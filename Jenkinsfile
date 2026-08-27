@@ -71,17 +71,16 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo '=== STAGE: Deploy ==='
-                echo 'Starting deployment to local web server directories...'
+                echo 'Starting deployment to local web server directories using rsync...'
 
                 // 1. Deploy Frontend static files
-                // Copies compiled index.html and assets to Nginx folder.
-                // NOTE: Jenkins user must have write access to DEPLOY_FRONTEND_PATH, 
-                // or sudo privileges configured for this copy command.
-                sh "cp -r frontend/dist/* ${DEPLOY_FRONTEND_PATH}/"
+                // Syncs compiled index.html and assets to Nginx folder.
+                // Using rsync is safe, atomic, and deletes obsolete production assets.
+                sh "rsync -a --delete frontend/dist/ ${DEPLOY_FRONTEND_PATH}/"
 
                 // 2. Deploy Backend server files
-                // Copies compiled javascript files to the backend run directory.
-                sh "cp -r backend/dist/* ${DEPLOY_BACKEND_PATH}/dist/"
+                // Syncs compiled javascript files to the backend run directory.
+                sh "rsync -a --delete backend/dist/ ${DEPLOY_BACKEND_PATH}/dist/"
 
                 // 3. Restart Backend systemd service
                 // Triggers systemd to reload the newly copied backend scripts.
