@@ -27,8 +27,6 @@ const skillGroups: SkillGroup[] = [
   {
     category: 'Learning Areas',
     skills: [
-      { name: 'Machine Learning', level: 'Exploring', percentage: 78 },
-      { name: 'Deep Learning', level: 'Exploring', percentage: 65 },
       { name: 'Cybersecurity Fundamentals', level: 'Exploring', percentage: 70 },
       { name: 'Blockchain', level: 'Exploring', percentage: 60 }
     ]

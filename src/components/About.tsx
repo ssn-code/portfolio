@@ -72,7 +72,7 @@ export default function About() {
             className="lg:col-span-6 space-y-6 text-slate-300 md:text-lg leading-relaxed font-sans"
           >
             <p>
-              I'm a <span className="text-cyan-300 font-semibold">Computer Science Engineering student</span> passionate about building practical solutions with technology. My interests span <span className="text-indigo-300">Cybersecurity</span>, <span className="text-cyan-300">Artificial Intelligence</span>, <span className="text-blue-300">Machine Learning</span>, and <span className="text-emerald-300">Software Development</span>.
+              I'm a <span className="text-cyan-300 font-semibold">Computer Science Engineering student</span> passionate about building practical solutions with technology. My interests span <span className="text-indigo-300">Cybersecurity</span>, <span className="text-cyan-300">Distributed Systems</span>, <span className="text-blue-300">Database Design</span>, and <span className="text-emerald-300">Software Development</span>.
             </p>
             <p>
               I enjoy turning ideas into working projects because I learn best by building, experimenting, and solving real-world problems. Every project helps me strengthen my understanding of system design, programming, security, and modern development practices.

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ShieldAlert, Activity, LayoutTemplate, Map, FileCode, Cpu, Github, ExternalLink, ChevronRight } from 'lucide-react';
+import { ShieldAlert, LayoutTemplate, Map, FileCode, Github, ExternalLink, ChevronRight } from 'lucide-react';
 import { Project } from '../types';
 
 const projects: Project[] = [
@@ -22,24 +22,7 @@ const projects: Project[] = [
       { label: 'Endpoints Created', value: '18+' }
     ]
   },
-  {
-    id: 'heartprediction',
-    title: 'Heart Disease Prediction System',
-    description: 'An analytical machine learning model designed to classify and evaluate risk indicators for cardiovascular diseases. Utilizes standard healthcare features to output risk probabilities and comparative classifier metrics.',
-    tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
-    category: 'ml',
-    githubUrl: 'https://github.com/ssn/heart-disease-ml',
-    details: [
-      'Processed and normalized standard physiological attributes (cholesterol, age, maximum heart rate) using Scikit-Learn preprocessing.',
-      'Trained Random Forest, SVM, and Logistic Regression models, achieving an optimal predictive classification accuracy of 87.4%.',
-      'Designed a correlation matrix and feature importance plotting workflow to identify key predictors of cardiovascular failures.'
-    ],
-    metrics: [
-      { label: 'Classifier Accuracy', value: '87.4%' },
-      { label: 'Model F1-Score', value: '0.86' },
-      { label: 'Trained Samples', value: '1,025' }
-    ]
-  },
+
   {
     id: 'webUI',
     title: 'Web Development Projects',
@@ -69,8 +52,6 @@ export default function Projects() {
     switch (id) {
       case 'securesphere':
         return <ShieldAlert className="w-6 h-6 text-cyan-400 animate-pulse" />;
-      case 'heartprediction':
-        return <Activity className="w-6 h-6 text-blue-400" />;
       default:
         return <LayoutTemplate className="w-6 h-6 text-indigo-400" />;
     }
@@ -105,42 +86,6 @@ export default function Projects() {
             <div className="mt-4 text-center">
               <p className="text-cyan-400">SELECT s.id, s.coords, ST_Distance(s.geom, pt) ORDER BY s.coords</p>
               <p className="text-slate-600 mt-1">PostGIS Spatial Query Optimized</p>
-            </div>
-          </div>
-        );
-      case 'heartprediction':
-        return (
-          <div className="absolute inset-0 bg-slate-950/80 rounded-2xl flex flex-col items-center justify-center p-6 border border-slate-800 overflow-hidden font-mono text-[10px] text-slate-500">
-            <div className="absolute top-4 left-4 text-blue-500/50 flex items-center gap-1">
-              <Cpu className="w-3.5 h-3.5" />
-              <span>SciKit Classifier Core</span>
-            </div>
-            
-            {/* Health Wave & ML Weights */}
-            <div className="relative w-48 h-28 border border-slate-800 rounded bg-slate-900/40 mt-3 p-2 flex flex-col justify-end">
-              <div className="flex-grow flex items-center justify-center">
-                <svg className="w-full h-12" viewBox="0 0 100 40">
-                  <path d="M 0 20 L 30 20 L 35 10 L 40 30 L 45 20 L 50 20 L 55 5 L 60 35 L 65 20 L 100 20" fill="none" stroke="rgba(59, 130, 246, 0.6)" strokeWidth="1.5" />
-                </svg>
-              </div>
-              <div className="grid grid-cols-3 gap-1 border-t border-slate-800/80 pt-1 text-center text-[8px]">
-                <div>
-                  <div className="text-blue-400 font-semibold">ROC-AUC</div>
-                  <div>0.91</div>
-                </div>
-                <div>
-                  <div className="text-blue-400 font-semibold">LogLoss</div>
-                  <div>0.312</div>
-                </div>
-                <div>
-                  <div className="text-blue-400 font-semibold">Precision</div>
-                  <div>0.88</div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 text-center">
-              <p className="text-blue-400">RandomForestClassifier(n_estimators=100, max_depth=8)</p>
-              <p className="text-slate-600 mt-1">Model Accuracy Yielded: 87.4%</p>
             </div>
           </div>
         );

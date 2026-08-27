@@ -26,7 +26,7 @@ export default function Contact() {
           id: 'def2',
           name: 'Tech Mentor',
           role: 'Full Stack Engineer',
-          message: 'ShivShakthi, your focus on solid machine learning foundations and cybersecurity is very refreshing. Keep coding clean platforms!',
+          message: 'ShivShakthi, your focus on solid software architectures and cybersecurity is very refreshing. Keep coding clean platforms!',
           timestamp: 'May 28, 2026'
         }
       ];

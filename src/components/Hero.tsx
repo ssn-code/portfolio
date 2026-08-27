@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Code, Server, Shield, BrainCircuit, Terminal, ArrowDownRight } from 'lucide-react';
+import { Code, Server, Shield, Terminal, ArrowDownRight } from 'lucide-react';
 
 const roles = [
   'Full Stack Development Learner',
-  'Machine Learning Enthusiast',
   'Cybersecurity Learner',
   'Problem Solver'
 ];
@@ -87,7 +86,7 @@ export default function Hero({ onViewProjects, onContact }: HeroProps) {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="max-w-2xl text-slate-400 md:text-lg leading-relaxed mb-12"
         >
-          Welcome to my digital space. As a CS student, I focus on laying a strong foundation across full-stack systems, modern machine learning paradigms, network security, and cryptographic ledger designs.
+          Welcome to my digital space. As a CS student, I focus on laying a strong foundation across full-stack systems, robust software architectures, network security, and cryptographic ledger designs.
         </motion.p>
 
         {/* Call to Actions */}
@@ -127,10 +126,6 @@ export default function Hero({ onViewProjects, onContact }: HeroProps) {
           <div className="flex flex-col items-center gap-1.5">
             <Code className="w-5 h-5 text-blue-400" />
             <span className="text-[10px] font-mono tracking-widest text-slate-500">DEV</span>
-          </div>
-          <div className="flex flex-col items-center gap-1.5">
-            <BrainCircuit className="w-5 h-5 text-cyan-400" />
-            <span className="text-[10px] font-mono tracking-widest text-slate-500">AI / ML</span>
           </div>
           <div className="flex flex-col items-center gap-1.5">
             <Shield className="w-5 h-5 text-indigo-400" />

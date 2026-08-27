@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   description: string;
   tech: string[];
-  category: 'web' | 'ml' | 'other';
+  category: 'web' | 'system' | 'other';
   liveUrl?: string;
   githubUrl?: string;
   details?: string[];

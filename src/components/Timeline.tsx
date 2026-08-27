@@ -21,15 +21,7 @@ const timelineEvents: TimelineEvent[] = [
     tag: 'CLIENT SHELLS',
     status: 'completed',
   },
-  {
-    id: 'stage3',
-    title: 'Exploring Machine Learning',
-    subtitle: 'Predictive Classifications & Models',
-    description: 'Began applying statistical modeling to medical and GIS databases. Normalized clean datasets using Pandas/NumPy and configured supervised SVM classifiers using Scikit-learn.',
-    iconName: 'Cpu',
-    tag: 'DATA INTELLIGENCE',
-    status: 'completed',
-  },
+
   {
     id: 'stage4',
     title: 'Learning Cybersecurity',

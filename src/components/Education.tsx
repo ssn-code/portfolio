@@ -5,7 +5,7 @@ export default function Education() {
   const courses = [
     { name: 'Data Structures & Algorithms', desc: 'Space/Time optimization, graphs, search algorithms.' },
     { name: 'Database Management (SQL)', desc: 'Relational schemas, queries, normalization patterns.' },
-    { name: 'Machine Learning Foundations', desc: 'Regression, classification, feature evaluation models.' },
+    { name: 'Software Engineering Methodologies', desc: 'Agile lifecycle, modular architecture design, code standards.' },
     { name: 'Network Security Basics', desc: 'Secure handshakes, JWT session security, authorization.' },
   ];
 
@@ -68,7 +68,7 @@ export default function Education() {
               <div className="grid grid-cols-2 gap-4 border-t border-slate-900 pt-6">
                 <div>
                   <p className="text-xs font-mono text-slate-500 uppercase">Focus Area</p>
-                  <p className="text-slate-200 mt-1 font-medium text-sm">Distributed Systems & AI/ML</p>
+                  <p className="text-slate-200 mt-1 font-medium text-sm">Distributed Systems & Software Eng.</p>
                 </div>
                 <div>
                   <p className="text-xs font-mono text-slate-500 uppercase">Status</p>
