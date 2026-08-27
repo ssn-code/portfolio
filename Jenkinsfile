@@ -76,11 +76,11 @@ pipeline {
                 // 1. Deploy Frontend static files
                 // Syncs compiled index.html and assets to Nginx folder.
                 // Using rsync is safe, atomic, and deletes obsolete production assets.
-                sh "rsync -rltD --delete --no-owner --no-group --no-perms frontend/dist/ ${DEPLOY_FRONTEND_PATH}/"
+                sh "rsync -rltD --delete --no-owner --no-group --no-perms --omit-dir-times frontend/dist/ ${DEPLOY_FRONTEND_PATH}/"
 
                 // 2. Deploy Backend server files
                 // Syncs compiled javascript files to the backend run directory.
-                sh "rsync -a --delete backend/dist/ ${DEPLOY_BACKEND_PATH}/dist/"
+                sh "rsync -rltD --delete --no-owner --no-group --no-perms --omit-dir-times backend/dist/ ${DEPLOY_BACKEND_PATH}/dist/"
 
                 // 3. Restart Backend systemd service
                 // Triggers systemd to reload the newly copied backend scripts.
