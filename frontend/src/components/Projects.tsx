@@ -5,22 +5,24 @@ import { Project } from '../types';
 
 const projects: Project[] = [
   {
-    id: 'securesphere',
-    title: 'SecureSphere',
-    description: 'Crime reporting and safety intelligence platform designed to organize and analyze geospatial incident records. Empowers local communities with critical safety statistics, mapping systems, and route assessment logs.',
-    tech: ['FastAPI', 'PostgreSQL', 'PostGIS', 'React', 'Leaflet'],
+    id: 'sentinel',
+    title: 'SENTINEL',
+    subtitle: 'Safety Intelligence Platform',
+    description: 'Crime intelligence and safety analytics platform designed to organize and visualize regional crime data across India. Provides interactive crime mapping, comparative analytics, safety scoring, and a dataset-grounded AI assistant for exploring crime statistics.',
+    tech: ['FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'Leaflet', 'AI'],
     category: 'web',
-    githubUrl: 'https://github.com/ssn/securesphere-safety',
+    githubUrl: 'https://github.com/ssn-code/SENTINEL',
     details: [
-      'Engineered GIS schema structures using PostgreSQL and PostGIS to query nearest incident vectors in under 12ms.',
-      'Implemented real-time heatmaps using Leaflet.js to cluster and overlay historical incident density maps.',
-      'Constructed a robust backend API using FastAPI to handle incident reporting, token authorization, and automated category matching.'
+      'Designed a full-stack architecture combining React, FastAPI, and PostgreSQL for regional crime intelligence and analytics.',
+      'Built an interactive India crime map using Leaflet and GeoJSON, enabling users to explore regional crime statistics geographically.',
+      'Developed a dataset-grounded AI assistant that retrieves crime statistics from PostgreSQL and provides factual comparisons using OpenAI/Groq.'
     ],
     metrics: [
-      { label: 'Query Performance', value: '< 12ms' },
-      { label: 'PostGIS Clustered Points', value: '4,000+' },
-      { label: 'Endpoints Created', value: '18+' }
-    ]
+      { label: 'API Endpoints', value: '12+' },
+      { label: 'GeoJSON Regions', value: '36' },
+      { label: 'AI Integrations', value: 'GPT/Groq' }
+    ],
+    status: 'DATA-DRIVEN SAFETY INTELLIGENCE'
   },
 
   {
@@ -50,7 +52,7 @@ export default function Projects() {
 
   const getProjectIcon = (id: string) => {
     switch (id) {
-      case 'securesphere':
+      case 'sentinel':
         return <ShieldAlert className="w-6 h-6 text-cyan-400 animate-pulse" />;
       default:
         return <LayoutTemplate className="w-6 h-6 text-indigo-400" />;
@@ -59,12 +61,12 @@ export default function Projects() {
 
   const getGeometryMock = (id: string) => {
     switch (id) {
-      case 'securesphere':
+      case 'sentinel':
         return (
           <div className="absolute inset-0 bg-slate-950/80 rounded-2xl flex flex-col items-center justify-center p-6 border border-slate-800 overflow-hidden font-mono text-[10px] text-slate-500">
             <div className="absolute top-4 left-4 text-cyan-500/50 flex items-center gap-1">
               <Map className="w-3.5 h-3.5" />
-              <span>GIS ROUTING INTERFACE</span>
+              <span>SAFETY MAP & GEOGRAPHY INTERFACE</span>
             </div>
             
             {/* Visual Heatmap Wireframe */}
@@ -84,8 +86,8 @@ export default function Projects() {
               </svg>
             </div>
             <div className="mt-4 text-center">
-              <p className="text-cyan-400">SELECT s.id, s.coords, ST_Distance(s.geom, pt) ORDER BY s.coords</p>
-              <p className="text-slate-600 mt-1">PostGIS Spatial Query Optimized</p>
+              <p className="text-cyan-400">SELECT region, count, grade FROM crime_analytics ORDER BY count DESC</p>
+              <p className="text-slate-600 mt-1">Leaflet GeoJSON Regional Visualization</p>
             </div>
           </div>
         );
@@ -184,7 +186,12 @@ export default function Projects() {
                   <div className="p-2 bg-slate-900 rounded-lg border border-slate-800">
                     {getProjectIcon(currentProject.id)}
                   </div>
-                  <h4 className="text-2xl font-bold font-sans text-white">{currentProject.title}</h4>
+                  <div className="flex flex-col">
+                    <h4 className="text-2xl font-bold font-sans text-white leading-tight">{currentProject.title}</h4>
+                    {currentProject.subtitle && (
+                      <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mt-0.5">{currentProject.subtitle}</span>
+                    )}
+                  </div>
                 </div>
 
                 <p className="text-slate-300 mb-6 text-sm md:text-base leading-relaxed">
@@ -233,7 +240,7 @@ export default function Projects() {
                 {/* Active Learning Status Indicator */}
                 <div className="text-[10px] font-mono text-slate-500 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                  <span>MAPPED & SYSTEM COMPILING</span>
+                  <span>{currentProject.status || 'MAPPED & SYSTEM COMPILING'}</span>
                 </div>
               </div>
 

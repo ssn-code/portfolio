@@ -1,6 +1,7 @@
 export interface Project {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
   tech: string[];
   category: 'web' | 'system' | 'other';
@@ -8,6 +9,7 @@ export interface Project {
   githubUrl?: string;
   details?: string[];
   metrics?: { label: string; value: string }[];
+  status?: string;
 }
 
 export interface Skill {

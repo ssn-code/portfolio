@@ -35,7 +35,7 @@ const timelineEvents: TimelineEvent[] = [
     id: 'stage5',
     title: 'Building Real-World Projects',
     subtitle: 'Full Stack Integration',
-    description: 'Composing comprehensive programs (such as SecureSphere GIS maps) utilizing robust micro-framework backends, PostGIS databases, and customized visual elements.',
+    description: 'Composing comprehensive programs (such as SENTINEL) utilizing robust micro-framework backends, relational databases, and customized visual elements.',
     iconName: 'Award',
     tag: 'ACTIVE STAGE',
     status: 'learning',
