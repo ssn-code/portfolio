@@ -76,7 +76,7 @@ pipeline {
                 // 1. Deploy Frontend static files
                 // Syncs compiled index.html and assets to Nginx folder.
                 // Using rsync is safe, atomic, and deletes obsolete production assets.
-                sh "rsync -a --delete frontend/dist/ ${DEPLOY_FRONTEND_PATH}/"
+                sh "rsync -rltD --delete --no-owner --no-group --no-perms frontend/dist/ ${DEPLOY_FRONTEND_PATH}/"
 
                 // 2. Deploy Backend server files
                 // Syncs compiled javascript files to the backend run directory.
