@@ -3,6 +3,13 @@ stages:
   - build
   - validate
 
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - node_modules/
+
 install:
   stage: install
   script:
